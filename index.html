@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tailwind CSS 3.x Benchmark App</title>
+    <link href="dist/styles.css" rel="stylesheet">
+</head>
+<body class="bg-gray-50">
+    <!-- Header with gradient background (bg-gradient-to-r) -->
+    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 shadow-lg">
+        <div class="container mx-auto">
+            <h1 class="text-3xl font-bold text-shadow-lg">Tailwind CSS 3.x Benchmark</h1>
+            <p class="text-blue-100 mt-2 text-opacity-80">Testing migration breaking changes</p>
+        </div>
+    </header>
+
+    <!-- Navigation with flex utilities -->
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-6">
+                    <a href="#" class="nav-link font-medium">Home</a>
+                    <a href="#" class="nav-link font-medium">About</a>
+                    <a href="#" class="nav-link font-medium">Services</a>
+                    <a href="#" class="nav-link font-medium">Contact</a>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <button class="btn-primary">Sign In</button>
+                    <button class="bg-gray-200 hover:bg-gray-300 text-gray-800 px-4 py-2 rounded transition-colors">
+                        Register
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="container mx-auto px-6 py-8">
+        <!-- Hero Section with opacity utilities -->
+        <section class="text-center mb-12">
+            <div class="bg-white bg-opacity-90 rounded-4xl p-8 shadow-xl">
+                <h2 class="text-4xl font-bold text-gray-800 mb-4">
+                    Breaking Changes Demo
+                </h2>
+                <p class="text-gray-600 text-lg mb-6 text-opacity-75">
+                    This page demonstrates Tailwind CSS 3.x features that will break in v4
+                </p>
+                <div class="flex justify-center space-x-4">
+                    <button class="btn-primary transform hover:scale-105 transition-transform">
+                        Get Started
+                    </button>
+                    <button class="border-2 border-primary-500 text-primary-500 hover:bg-primary-500 hover:text-white px-6 py-3 rounded-lg transition-colors">
+                        Learn More
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Cards Grid with deprecated flex utilities -->
+        <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            <!-- Card 1: Opacity Utilities -->
+            <div class="card">
+                <div class="bg-red-500 bg-opacity-20 rounded-lg p-4 mb-4">
+                    <h3 class="text-xl font-bold text-red-800 text-opacity-90">Opacity Utilities</h3>
+                </div>
+                <p class="text-gray-600 text-opacity-75 mb-4">
+                    Using bg-opacity-*, text-opacity-* utilities that need migration
+                </p>
+                <div class="border-l-4 border-red-500 border-opacity-50 pl-4">
+                    <p class="text-sm text-red-600 text-opacity-80">
+                        Will become: bg-red-500/20, text-red-800/90
+                    </p>
+                </div>
+            </div>
+
+            <!-- Card 2: Gradient Utilities -->
+            <div class="card">
+                <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-lg p-4 mb-4">
+                    <h3 class="text-xl font-bold text-white">Gradient Utilities</h3>
+                </div>
+                <p class="text-gray-600 mb-4">
+                    Using bg-gradient-to-* utilities that become bg-linear-to-*
+                </p>
+                <div class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 h-4 rounded-full">
+                </div>
+            </div>
+
+            <!-- Card 3: Deprecated Flex Utilities -->
+            <div class="card">
+                <h3 class="text-xl font-bold text-gray-800 mb-4">Deprecated Flex</h3>
+                <div class="space-y-3">
+                    <div class="flex items-center">
+                        <div class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
+                        <span class="text-gray-600 flex-grow">flex-shrink-0</span>
+                    </div>
+                    <div class="flex items-center">
+                        <div class="flex-grow-0 w-4 h-4 bg-green-500 rounded-full mr-3"></div>
+                        <span class="text-gray-600 flex-grow">flex-grow-0</span>
+                    </div>
+                    <p class="text-sm text-gray-500">
+                        Will become: shrink-0, grow-0
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Text Utilities Section -->
+        <section class="bg-white rounded-lg shadow-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Text Utilities</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Overflow Ellipsis</h3>
+                    <div class="w-48 border border-gray-300 rounded p-3">
+                        <p class="overflow-hidden overflow-ellipsis whitespace-nowrap">
+                            This text will be truncated with ellipsis when it overflows
+                        </p>
+                    </div>
+                    <p class="text-sm text-gray-500 mt-2">
+                        overflow-ellipsis → text-ellipsis
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700 mb-4">Decoration Utilities</h3>
+                    <div class="space-y-2">
+                        <p class="underline decoration-2 decoration-blue-500">
+                            Underlined text with decoration utilities
+                        </p>
+                        <p class="line-through decoration-red-500">
+                            Strikethrough text
+                        </p>
+                        <p class="text-sm text-gray-500">
+                            decoration-* → box-decoration-*
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Transition Examples -->
+        <section class="bg-gray-100 rounded-lg p-8 mb-12">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Transition Examples</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="text-center">
+                    <div class="bg-blue-500 w-16 h-16 rounded-full mx-auto mb-4 transform hover:scale-110 transition-transform duration-300 cursor-pointer">
+                    </div>
+                    <p class="text-sm text-gray-600">transition-transform</p>
+                    <p class="text-xs text-gray-500">Will need: transition-[transform,translate,scale,rotate]</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-green-500 w-16 h-16 rounded-full mx-auto mb-4 hover:rotate-45 transition-transform duration-300 cursor-pointer">
+                    </div>
+                    <p class="text-sm text-gray-600">hover:rotate-45</p>
+                </div>
+                <div class="text-center">
+                    <div class="bg-purple-500 w-16 h-16 rounded-full mx-auto mb-4 hover:translate-x-2 transition-transform duration-300 cursor-pointer">
+                    </div>
+                    <p class="text-sm text-gray-600">hover:translate-x-2</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Dark Mode Toggle -->
+        <section class="bg-white rounded-lg shadow-lg p-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-6">Dark Mode (JavaScript Config)</h2>
+            <div class="flex items-center justify-between">
+                <div>
+                    <h3 class="text-lg font-semibold text-gray-700">Theme Toggle</h3>
+                    <p class="text-gray-600">Currently using JavaScript darkMode: 'class'</p>
+                    <p class="text-sm text-gray-500 mt-2">
+                        In v4: Will use CSS-based dark mode variants
+                    </p>
+                </div>
+                <button 
+                    onclick="toggleDarkMode()"
+                    class="bg-gray-800 hover:bg-gray-700 text-white px-4 py-2 rounded-lg transition-colors"
+                >
+                    Toggle Dark Mode
+                </button>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-8 mt-12">
+        <div class="container mx-auto px-6 text-center">
+            <p class="text-gray-300 text-opacity-75">
+                © 2024 Tailwind CSS 3.x Benchmark. Built for migration testing.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        function toggleDarkMode() {
+            document.documentElement.classList.toggle('dark');
+        }
+    </script>
+</body>
+</html>
