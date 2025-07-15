@@ -2,6 +2,7 @@
   "name": "tailwind-v3-benchmark",
   "version": "1.0.0",
   "description": "Tailwind CSS 3.x benchmark app for migration testing",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "build": "postcss src/styles.css -o dist/styles.css",
