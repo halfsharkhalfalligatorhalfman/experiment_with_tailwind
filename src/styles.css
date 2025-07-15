@@ -1,5 +1,36 @@
 @import "tailwindcss";
 
+@theme {
+  --color-primary-50: #eff6ff;
+  --color-primary-100: #dbeafe;
+  --color-primary-500: #3b82f6;
+  --color-primary-600: #2563eb;
+  --color-primary-900: #1e3a8a;
+  
+  --color-secondary-100: #f3f4f6;
+  --color-secondary-200: #e5e7eb;
+  --color-secondary-500: #6b7280;
+  --color-secondary-800: #1f2937;
+  
+  --font-family-custom: Inter, sans-serif;
+  
+  --spacing-18: 4.5rem;
+  --spacing-22: 5.5rem;
+  
+  --border-radius-4xl: 2rem;
+}
+
+@plugin "@tailwindcss/typography";
+@plugin "@tailwindcss/forms";
+
+@utility text-shadow {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+@utility text-shadow-lg {
+  text-shadow: 4px 4px 8px rgba(0, 0, 0, 0.3);
+}
+
 @layer components {
   .btn-primary {
     @apply bg-primary-500 hover:bg-primary-600 text-white px-4 py-2 rounded transition-colors;
