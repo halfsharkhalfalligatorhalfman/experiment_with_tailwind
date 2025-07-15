@@ -7,11 +7,11 @@
     <link href="dist/styles.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50">
-    <!-- Header with gradient background (bg-gradient-to-r) -->
-    <header class="bg-gradient-to-r from-blue-600 to-purple-600 text-white p-6 shadow-lg">
+    <!-- Header with gradient background (bg-linear-to-r) -->
+    <header class="bg-linear-to-r from-blue-600 to-purple-600 text-white p-6 shadow-lg">
         <div class="container mx-auto">
             <h1 class="text-3xl font-bold text-shadow-lg">Tailwind CSS 3.x Benchmark</h1>
-            <p class="text-blue-100 mt-2 text-opacity-80">Testing migration breaking changes</p>
+            <p class="text-blue-100/80 mt-2">Testing migration breaking changes</p>
         </div>
     </header>
 
@@ -39,11 +39,11 @@
     <main class="container mx-auto px-6 py-8">
         <!-- Hero Section with opacity utilities -->
         <section class="text-center mb-12">
-            <div class="bg-white bg-opacity-90 rounded-4xl p-8 shadow-xl">
+            <div class="bg-white/90 rounded-4xl p-8 shadow-xl">
                 <h2 class="text-4xl font-bold text-gray-800 mb-4">
                     Breaking Changes Demo
                 </h2>
-                <p class="text-gray-600 text-lg mb-6 text-opacity-75">
+                <p class="text-gray-600/75 text-lg mb-6">
                     This page demonstrates Tailwind CSS 3.x features that will break in v4
                 </p>
                 <div class="flex justify-center space-x-4">
@@ -61,14 +61,14 @@
         <section class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
             <!-- Card 1: Opacity Utilities -->
             <div class="card">
-                <div class="bg-red-500 bg-opacity-20 rounded-lg p-4 mb-4">
-                    <h3 class="text-xl font-bold text-red-800 text-opacity-90">Opacity Utilities</h3>
+                <div class="bg-red-500/20 rounded-lg p-4 mb-4">
+                    <h3 class="text-xl font-bold text-red-800/90">Opacity Utilities</h3>
                 </div>
-                <p class="text-gray-600 text-opacity-75 mb-4">
+                <p class="text-gray-600/75 mb-4">
                     Using bg-opacity-*, text-opacity-* utilities that need migration
                 </p>
-                <div class="border-l-4 border-red-500 border-opacity-50 pl-4">
-                    <p class="text-sm text-red-600 text-opacity-80">
+                <div class="border-l-4 border-red-500/50 pl-4">
+                    <p class="text-sm text-red-600/80">
                         Will become: bg-red-500/20, text-red-800/90
                     </p>
                 </div>
@@ -76,13 +76,13 @@
 
             <!-- Card 2: Gradient Utilities -->
             <div class="card">
-                <div class="bg-gradient-to-br from-green-400 to-blue-500 rounded-lg p-4 mb-4">
+                <div class="bg-linear-to-br from-green-400 to-blue-500 rounded-lg p-4 mb-4">
                     <h3 class="text-xl font-bold text-white">Gradient Utilities</h3>
                 </div>
                 <p class="text-gray-600 mb-4">
-                    Using bg-gradient-to-* utilities that become bg-linear-to-*
+                    Using bg-linear-to-* utilities (migrated from bg-gradient-to-*)
                 </p>
-                <div class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 h-4 rounded-full">
+                <div class="bg-linear-to-r from-yellow-400 via-red-500 to-pink-500 h-4 rounded-full">
                 </div>
             </div>
 
@@ -91,15 +91,15 @@
                 <h3 class="text-xl font-bold text-gray-800 mb-4">Deprecated Flex</h3>
                 <div class="space-y-3">
                     <div class="flex items-center">
-                        <div class="flex-shrink-0 w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
-                        <span class="text-gray-600 flex-grow">flex-shrink-0</span>
+                        <div class="shrink-0 w-4 h-4 bg-blue-500 rounded-full mr-3"></div>
+                        <span class="text-gray-600 grow">shrink-0 (was flex-shrink-0)</span>
                     </div>
                     <div class="flex items-center">
-                        <div class="flex-grow-0 w-4 h-4 bg-green-500 rounded-full mr-3"></div>
-                        <span class="text-gray-600 flex-grow">flex-grow-0</span>
+                        <div class="grow-0 w-4 h-4 bg-green-500 rounded-full mr-3"></div>
+                        <span class="text-gray-600 grow">grow-0 (was flex-grow-0)</span>
                     </div>
                     <p class="text-sm text-gray-500">
-                        Will become: shrink-0, grow-0
+                        Migrated to: shrink-0, grow-0
                     </p>
                 </div>
             </div>
@@ -112,12 +112,12 @@
                 <div>
                     <h3 class="text-lg font-semibold text-gray-700 mb-4">Overflow Ellipsis</h3>
                     <div class="w-48 border border-gray-300 rounded p-3">
-                        <p class="overflow-hidden overflow-ellipsis whitespace-nowrap">
+                        <p class="overflow-hidden text-ellipsis whitespace-nowrap">
                             This text will be truncated with ellipsis when it overflows
                         </p>
                     </div>
                     <p class="text-sm text-gray-500 mt-2">
-                        overflow-ellipsis → text-ellipsis
+                        overflow-ellipsis → text-ellipsis (migrated)
                     </p>
                 </div>
                 <div>
@@ -184,7 +184,7 @@
     <!-- Footer -->
     <footer class="bg-gray-800 text-white py-8 mt-12">
         <div class="container mx-auto px-6 text-center">
-            <p class="text-gray-300 text-opacity-75">
+            <p class="text-gray-300/75">
                 © 2024 Tailwind CSS 3.x Benchmark. Built for migration testing.
             </p>
         </div>
