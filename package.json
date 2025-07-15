@@ -2,7 +2,12 @@
   "name": "tailwind-v3-benchmark",
   "version": "1.0.0",
   "description": "Tailwind CSS 3.x benchmark app for migration testing",
+  "type": "module",
   "main": "index.js",
+  "exports": {
+    ".": "./index.js",
+    "./package.json": "./package.json"
+  },
   "scripts": {
     "build": "postcss src/styles.css -o dist/styles.css",
     "watch": "postcss src/styles.css -o dist/styles.css --watch",
@@ -19,5 +24,8 @@
   },
   "dependencies": {
     "live-server": "^1.2.2"
+  },
+  "engines": {
+    "node": ">=14.0.0"
   }
 }

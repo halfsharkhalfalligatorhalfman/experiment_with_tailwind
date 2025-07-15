@@ -1,5 +1,8 @@
+import tailwindTypography from '@tailwindcss/typography';
+import tailwindForms from '@tailwindcss/forms';
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./src/**/*.{html,js}",
     "./index.html"
@@ -35,8 +38,8 @@ module.exports = {
     },
   },
   plugins: [
-    require('@tailwindcss/typography'),
-    require('@tailwindcss/forms'),
+    tailwindTypography,
+    tailwindForms,
     function({ addUtilities }) {
       const newUtilities = {
         '.text-shadow': {
@@ -53,4 +56,4 @@ module.exports = {
     preflight: true,
     container: false
   }
-}
+};
