@@ -9,7 +9,7 @@ This app specifically includes the following Tailwind CSS 3.x features that will
 ### 1. Package Dependencies
 - `tailwindcss` (v3.x)
 - `postcss-import` (removed in v4)
-- `autoprefixer` (removed in v4)
+- `autoprefixer` 
 
 ### 2. PostCSS Configuration
 - Uses `tailwindcss` plugin instead of `@tailwindcss/postcss`
