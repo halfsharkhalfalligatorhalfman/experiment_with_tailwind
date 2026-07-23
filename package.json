@@ -1,6 +1,6 @@
 {
   "name": "tailwind-v3-benchmark",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Tailwind CSS 3.x benchmark app for migration testing",
   "main": "index.js",
   "scripts": {
