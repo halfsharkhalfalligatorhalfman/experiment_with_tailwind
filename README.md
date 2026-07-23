@@ -75,3 +75,6 @@ Use this app to test your Tailwind CSS 3.x to 4.x migration tool. The app should
 - `src/styles.css` - CSS with @tailwind directives and @layer
 - `index.html` - HTML with various deprecated utilities
 - `dist/` - Compiled CSS output
+## Changelog
+
+- 1.0.1: bump patch version for OSS-tier scenario test (oss (current) — public + allowlisted → should process).
